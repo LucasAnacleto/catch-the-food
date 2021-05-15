@@ -10,6 +10,10 @@
 [node name="Main" type="Node2D"]
 script = ExtResource( 7 )
 
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 128, 72 )
+current = true
+
 [node name="PlatformGenerator" parent="." instance=ExtResource( 1 )]
 
 [node name="PlatformSectionGenerator" parent="PlatformGenerator" instance=ExtResource( 4 )]
@@ -27,8 +31,12 @@ script = ExtResource( 2 )
 start_row = 9
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( -36, 68 )
 automove_to = 1
 velocity = 50
+
+[node name="Camera" type="Camera2D" parent="Player"]
+position = Vector2( 0, 4 )
 
 [connection signal="map_clear_requested" from="PlatformGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_clear_requested"]
 [connection signal="draw_platform_requested" from="PlatformGenerator/PlatformSectionGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformSectionGenerator_draw_platform_requested"]

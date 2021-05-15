@@ -42,6 +42,10 @@ config/name="catch the food"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerStats="*res://scenes/PlayerStats.tscn"
+
 [display]
 
 window/size/width=256

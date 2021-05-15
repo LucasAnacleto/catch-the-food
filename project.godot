@@ -8,10 +8,48 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "DecisionMaker",
+"language": "GDScript",
+"path": "res://scripts/decision_maker.gd"
+}, {
+"base": "Node",
+"class": "LinearPlatformSectionGenerator",
+"language": "GDScript",
+"path": "res://modules/procedural_platform_generator/linear_platform_generator.gd"
+}, {
+"base": "Node",
+"class": "PlatformMapGenerator",
+"language": "GDScript",
+"path": "res://modules/procedural_platform_generator/platform_map_generator.gd"
+}, {
+"base": "Node",
+"class": "SpaceInTheMiddlePlatformSectionGenerator",
+"language": "GDScript",
+"path": "res://modules/procedural_platform_generator/space_in_the_middle_platform_generator.gd"
+} ]
+_global_script_class_icons={
+"DecisionMaker": "",
+"LinearPlatformSectionGenerator": "",
+"PlatformMapGenerator": "",
+"SpaceInTheMiddlePlatformSectionGenerator": ""
+}
+
 [application]
 
 config/name="catch the food"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=256
+window/size/height=144
+window/size/test_width=854
+window/size/test_height=480
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 
 [importer_defaults]
 

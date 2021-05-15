@@ -28,15 +28,19 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 8, 8 )
 format = 1
 script = ExtResource( 2 )
-start_row = 9
+start_row = 17
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( -36, 68 )
+position = Vector2( -36, 136 )
 automove_to = 1
 velocity = 50
 
 [node name="Camera" type="Camera2D" parent="Player"]
-position = Vector2( 0, 4 )
+position = Vector2( 0, -60 )
+process_mode = 0
+drag_margin_v_enabled = true
+drag_margin_top = 1.0
+drag_margin_bottom = 1.0
 
 [connection signal="map_clear_requested" from="PlatformGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_clear_requested"]
 [connection signal="draw_platform_requested" from="PlatformGenerator/PlatformSectionGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformSectionGenerator_draw_platform_requested"]

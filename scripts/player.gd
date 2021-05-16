@@ -58,7 +58,7 @@ func _physics_process(_delta):
 		var collision := get_slide_collision(i)
 
 		if collision.collider.get_class() == "TileMap":
-			var collision_position_in_grid = collision.collider.world_to_map(collision.position - Vector2(2, 0))
+			var collision_position_in_grid = collision.collider.world_to_map(collision.position - Vector2(2, 2))
 			var collided_cell = collision.collider.get_cellv(collision_position_in_grid)
 
 			if KILLER_TILES.has(collision.collider.tile_set.tile_get_name(collided_cell)):

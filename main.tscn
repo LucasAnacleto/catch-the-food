@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://modules/procedural_platform_generator/platform_map_generator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/platforms.gd" type="Script" id=2]
@@ -6,30 +6,35 @@
 [ext_resource path="res://modules/procedural_platform_generator/linear_platform_generator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/black_cat.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/health_ui.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scripts/main.gd" type="Script" id=7]
+[ext_resource path="res://scripts/game.gd" type="Script" id=7]
 [ext_resource path="res://scripts/items.gd" type="Script" id=8]
+[ext_resource path="res://scenes/game_menu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/ui.gd" type="Script" id=10]
 
 [node name="Main" type="Node2D"]
+
+[node name="Game" type="Node2D" parent="."]
+pause_mode = 1
 script = ExtResource( 7 )
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="Game"]
 position = Vector2( 128, 72 )
 current = true
 
-[node name="PlatformGenerator" parent="." instance=ExtResource( 1 )]
+[node name="PlatformGenerator" parent="Game" instance=ExtResource( 1 )]
 
-[node name="PlatformSectionGenerator" parent="PlatformGenerator" instance=ExtResource( 4 )]
+[node name="PlatformSectionGenerator" parent="Game/PlatformGenerator" instance=ExtResource( 4 )]
 decision_maker_script_path = "res://scripts/decision_maker.gd"
 platform_unit_width = 8
 max_platform_units = 8
 min_platform_units = 4
 max_platform_gap_units = 3
 
-[node name="Items" type="Node" parent="PlatformGenerator/PlatformSectionGenerator"]
+[node name="Items" type="Node" parent="Game/PlatformGenerator/PlatformSectionGenerator"]
 script = ExtResource( 8 )
 item_file_paths = [ "res://scenes/hamburger.tscn", "res://scenes/ice_cream.tscn", "res://scenes/pizza.tscn", "res://scenes/ration.tscn", "res://scenes/ration_2.tscn", "res://scenes/trash.tscn" ]
 
-[node name="Platforms" type="TileMap" parent="PlatformGenerator/PlatformSectionGenerator"]
+[node name="Platforms" type="TileMap" parent="Game/PlatformGenerator/PlatformSectionGenerator"]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 8, 8 )
 collision_use_kinematic = true
@@ -37,13 +42,13 @@ format = 1
 script = ExtResource( 2 )
 start_row = 17
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Player" parent="Game" instance=ExtResource( 5 )]
 position = Vector2( -36, 136 )
 can_jump = false
 automove_to = 1
 velocity = 50
 
-[node name="Camera" type="Camera2D" parent="Player"]
+[node name="Camera" type="Camera2D" parent="Game/Player"]
 position = Vector2( 0, -60 )
 process_mode = 0
 drag_margin_v_enabled = true
@@ -51,6 +56,8 @@ drag_margin_top = 1.0
 drag_margin_bottom = 1.0
 
 [node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
+script = ExtResource( 10 )
 
 [node name="HealthUI" parent="UI" instance=ExtResource( 6 )]
 
@@ -59,13 +66,16 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -40.0
 margin_bottom = 14.0
-text = "0"
+text = "0m"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="map_clear_requested" from="PlatformGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_clear_requested"]
-[connection signal="map_generation_requested" from="PlatformGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_generation_requested"]
-[connection signal="draw_platform_requested" from="PlatformGenerator/PlatformSectionGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformSectionGenerator_draw_platform_requested"]
-[connection signal="platform_generated" from="PlatformGenerator/PlatformSectionGenerator/Platforms" to="PlatformGenerator/PlatformSectionGenerator/Items" method="_on_Platforms_platform_generated"]
+[node name="GameMenu" parent="UI" instance=ExtResource( 9 )]
+visible = false
+
+[connection signal="map_clear_requested" from="Game/PlatformGenerator" to="Game/PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_clear_requested"]
+[connection signal="map_generation_requested" from="Game/PlatformGenerator" to="Game/PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_generation_requested"]
+[connection signal="draw_platform_requested" from="Game/PlatformGenerator/PlatformSectionGenerator" to="Game/PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformSectionGenerator_draw_platform_requested"]
+[connection signal="platform_generated" from="Game/PlatformGenerator/PlatformSectionGenerator/Platforms" to="Game/PlatformGenerator/PlatformSectionGenerator/Items" method="_on_Platforms_platform_generated"]

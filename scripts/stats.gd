@@ -1,9 +1,9 @@
 extends Node
 
 
-signal no_health
 signal health_chaged(value)
 signal max_health_chaged(value)
+signal score_changed(value)
 
 
 export(int) var max_health = 1 setget set_max_health
@@ -38,6 +38,7 @@ func set_score(points: int) -> void:
 		first_run = false
 
 	score = points + total
+	emit_signal("score_changed", score)
 
 
 func level_up() -> void:
@@ -47,3 +48,4 @@ func level_up() -> void:
 func reset_score() -> void:
 	score = 0
 	total = 0
+	emit_signal("score_changed", score)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cat-walk.png-47b4fefa44c9cdd400ac56059e29edc9.stex"
+path="res://.import/empty_life.png-72c06853138b16a6a990fb1516ea503f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/catch/cat-walk.png"
-dest_files=[ "res://.import/cat-walk.png-47b4fefa44c9cdd400ac56059e29edc9.stex" ]
+source_file="res://assets/life/empty_life.png"
+dest_files=[ "res://.import/empty_life.png-72c06853138b16a6a990fb1516ea503f.stex" ]
 
 [params]
 

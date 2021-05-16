@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/tileset/bricks.tres" type="TileSet" id=3]
 [ext_resource path="res://modules/procedural_platform_generator/linear_platform_generator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/black_cat.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/HealthUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/health_ui.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/main.gd" type="Script" id=7]
 
 [node name="Main" type="Node2D"]

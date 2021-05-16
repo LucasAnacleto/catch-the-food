@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cat-idle.png-3c7fc9ec7f9d2c9aec04ce940dcaf3c4.stex"
+path="res://.import/cat-walk.png-ce946eb08e2b8bd076ee396d15d97e03.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/catch/cat-idle.png"
-dest_files=[ "res://.import/cat-idle.png-3c7fc9ec7f9d2c9aec04ce940dcaf3c4.stex" ]
+source_file="res://assets/cats/black/cat-walk.png"
+dest_files=[ "res://.import/cat-walk.png-ce946eb08e2b8bd076ee396d15d97e03.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/empty life.png-6905c819869cf04de477c1d0d3bd05ba.stex"
+path="res://.import/full_life.png-accfbc0a283466567540258f5c9a17af.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/life/empty life.png"
-dest_files=[ "res://.import/empty life.png-6905c819869cf04de477c1d0d3bd05ba.stex" ]
+source_file="res://assets/life/full_life.png"
+dest_files=[ "res://.import/full_life.png-accfbc0a283466567540258f5c9a17af.stex" ]
 
 [params]
 

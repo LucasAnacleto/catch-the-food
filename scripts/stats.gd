@@ -12,13 +12,13 @@ func set_max_health(value):
 	max_health = value
 	self.health = min(health, max_health)
 	emit_signal("max_health_chaged", max_health)
-	  
+
 
 func set_health(value):
 	health = value
 	emit_signal("health_chaged", health)
 	if health <= 0:
 		emit_signal("no_health")
-		
+
 func _ready():
 	self.health = max_health

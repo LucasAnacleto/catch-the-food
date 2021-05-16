@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/full life.png-198effd852efb61350db10f9d5aa0592.stex"
+path="res://.import/cat-idle.png-cc8057ca57a12e1ff44c283379f2331e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/life/full life.png"
-dest_files=[ "res://.import/full life.png-198effd852efb61350db10f9d5aa0592.stex" ]
+source_file="res://assets/cats/black/cat-idle.png"
+dest_files=[ "res://.import/cat-idle.png-cc8057ca57a12e1ff44c283379f2331e.stex" ]
 
 [params]
 

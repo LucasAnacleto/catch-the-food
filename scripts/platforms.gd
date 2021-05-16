@@ -6,8 +6,17 @@ signal platform_generated(part_size, cell_size, last_cell_position)
 
 export var start_row := 0
 
-onready var current_wall_tile := tile_set.find_tile_by_name("brick")
-onready var platform_gap_tile := tile_set.find_tile_by_name("grid")
+onready var themes = [
+	{
+		"wall": "brick",
+		"gap": "grid"
+	},
+	{
+		"wall": "sand",
+		"gap": "water"
+	}
+]
+onready var current_theme = _get_next_theme()
 
 
 func _on_PlatformSectionGenerator_draw_platform_requested(section: Dictionary):
@@ -18,9 +27,9 @@ func _on_PlatformSectionGenerator_draw_platform_requested(section: Dictionary):
 
 		match part.type:
 			"platform":
-				part_tile = current_wall_tile
+				part_tile = tile_set.find_tile_by_name(themes[current_theme].wall)
 			"gap":
-				part_tile = platform_gap_tile
+				part_tile = tile_set.find_tile_by_name(themes[current_theme].gap)
 
 		for x in range(start_column, start_column + part.size):
 			set_cellv(Vector2(x, start_row), part_tile)
@@ -32,5 +41,15 @@ func _on_PlatformSectionGenerator_draw_platform_requested(section: Dictionary):
 					map_to_world(Vector2(start_column - 1, start_row)))
 
 
+func _get_next_theme() -> int:
+	var next_theme = randi() % themes.size() - 1
+
+	while next_theme == current_theme:
+		next_theme = randi() % themes.size() - 1
+
+	return next_theme
+
+
 func _on_PlatformGenerator_map_clear_requested():
+	current_theme = _get_next_theme()
 	clear()

@@ -24,9 +24,6 @@ func spawn(platform_size: int, cell_size: Vector2, base_position: Vector2) -> vo
 	var screen_width := get_viewport().size.x
 	var current_platforms_width := base_position.x
 
-	if not next_item_type.name == "trash":
-		return
-
 	if base_position.x >= screen_width * 2:
 		var item = next_item_type.scene.instance()
 		item.position = normalized_base_position

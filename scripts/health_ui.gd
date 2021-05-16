@@ -9,13 +9,13 @@ onready var heartUIFull = $HeartUIFull
 func set_hearts(value):
 	hearts = clamp(value, 0, max_hearts)
 	if heartUIFull != null:
-		heartUIFull.rect_size.x = hearts *  15
+		heartUIFull.rect_size.x = hearts *  8
 
 func set_max_hearts(value):
 	max_hearts = max(value, 1)
 	self.hearts = min(hearts, max_hearts)
 	if heartUIEmpty != null:
-		heartUIEmpty.rect_size.x = max_hearts * 15
+		heartUIEmpty.rect_size.x = max_hearts * 8
 
 
 func _ready():

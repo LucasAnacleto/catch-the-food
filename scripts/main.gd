@@ -24,6 +24,9 @@ func _ready():
 func _process(delta):
 	var player_exact_position = int(ceil(player.position.x))
 
+	if player.is_dead:
+		_end_game()
+
 	if player.position.x > 0 and not player.is_dead:
 		PlayerStats.score = int(player.position.x / 50.0)
 		_set_score_text(PlayerStats.score)
@@ -54,10 +57,20 @@ func _end_map_transition() -> void:
 
 
 func _reset_map() -> void:
-#	PlayerStats.level_up()
+	PlayerStats.level_up()
 #	bgm.volume_db = 0
 #	bgm.play()
 	map_generator.clear_map()
 	map_generator.generate_map(map_width)
 	camera.make_current()
 	player.position = player_start_position
+
+
+func _end_game() -> void:
+#	bgm.stop()
+	yield(get_tree().create_timer(1.5), "timeout")
+	PlayerStats.reset_score()
+	PlayerStats.reset_health()
+	_set_score_text(0)
+# warning-ignore:return_value_discarded
+	get_tree().reload_current_scene()

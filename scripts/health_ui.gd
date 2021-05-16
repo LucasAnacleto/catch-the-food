@@ -9,6 +9,11 @@ onready var heartUIFull = $HeartUIFull
 func set_hearts(value):
 	hearts = clamp(value, 0, max_hearts)
 	if heartUIFull != null:
+		if hearts == 0:
+			heartUIFull.visible = false
+		else:
+			heartUIFull.visible = true
+
 		heartUIFull.rect_size.x = hearts *  8
 
 func set_max_hearts(value):

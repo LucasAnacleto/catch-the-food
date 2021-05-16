@@ -21,8 +21,8 @@ current = true
 [node name="PlatformSectionGenerator" parent="PlatformGenerator" instance=ExtResource( 4 )]
 decision_maker_script_path = "res://scripts/decision_maker.gd"
 platform_unit_width = 8
-max_platform_units = 4
-min_platform_units = 2
+max_platform_units = 8
+min_platform_units = 4
 max_platform_gap_units = 3
 
 [node name="Items" type="Node" parent="PlatformGenerator/PlatformSectionGenerator"]
@@ -46,6 +46,7 @@ velocity = 50
 position = Vector2( 0, -60 )
 process_mode = 0
 drag_margin_v_enabled = true
+smoothing_enabled = true
 drag_margin_top = 1.0
 drag_margin_bottom = 1.0
 

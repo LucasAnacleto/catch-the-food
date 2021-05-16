@@ -7,7 +7,7 @@ signal platform_generated(part_size, cell_size, last_cell_position)
 export var start_row := 0
 
 onready var current_wall_tile := tile_set.find_tile_by_name("brick")
-onready var platform_gap_tile := tile_set.find_tile_by_name("water-top")
+onready var platform_gap_tile := tile_set.find_tile_by_name("grid")
 
 
 func _on_PlatformSectionGenerator_draw_platform_requested(section: Dictionary):

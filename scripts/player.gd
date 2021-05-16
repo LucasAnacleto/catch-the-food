@@ -6,6 +6,7 @@ enum Direction {RIGHT, LEFT, NONE}
 
 const UP = Vector2(0, -1)
 const SPEED_STEP = 4
+const KILLER_TILES = ["grid", "water"]
 
 export var can_jump := true
 export var max_jump_height := 150
@@ -53,6 +54,16 @@ func _physics_process(_delta):
 
 	motion = move_and_slide(motion, UP)
 
+	for i in get_slide_count():
+		var collision := get_slide_collision(i)
+
+		if collision.collider.get_class() == "TileMap":
+			var collision_position_in_grid = collision.collider.world_to_map(collision.position - Vector2(2, 0))
+			var collided_cell = collision.collider.get_cellv(collision_position_in_grid)
+
+			if KILLER_TILES.has(collision.collider.tile_set.tile_get_name(collided_cell)):
+				die()
+
 
 func get_move_direction() -> int:
 	if (can_move && _is_action_pressed("right")) or automove_to == AutomoveDirection.RIGHT:
@@ -69,7 +80,7 @@ func should_jump() -> bool:
 
 
 func die() -> void:
-	PlayerStats.health -= 1
+	PlayerStats.health = 0
 	is_dead = true
 
 

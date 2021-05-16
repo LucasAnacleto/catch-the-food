@@ -1,12 +1,11 @@
 extends KinematicBody2D
 
 
-signal collided(collision)
-
 enum AutomoveDirection {TOP, RIGHT, BOTTOM, LEFT, NONE}
 enum Direction {RIGHT, LEFT, NONE}
 
 const UP = Vector2(0, -1)
+const SPEED_STEP = 4
 
 export var can_jump := true
 export var max_jump_height := 150
@@ -19,6 +18,11 @@ var motion := Vector2()
 var is_dead := false
 
 onready var sprite := $AnimatedSprite as AnimatedSprite
+onready var area := $Area2D as Area2D
+
+
+func _ready():
+	area.connect("area_shape_entered", self, "_on_Area2D_area_shape_entered")
 
 
 func _physics_process(_delta):
@@ -49,9 +53,6 @@ func _physics_process(_delta):
 
 	motion = move_and_slide(motion, UP)
 
-	for i in get_slide_count():
-		emit_signal("collided", get_slide_collision(i))
-
 
 func get_move_direction() -> int:
 	if (can_move && _is_action_pressed("right")) or automove_to == AutomoveDirection.RIGHT:
@@ -68,8 +69,27 @@ func should_jump() -> bool:
 
 
 func die() -> void:
+	PlayerStats.health -= 1
 	is_dead = true
 
 
 func _is_action_pressed(direction: String) -> bool:
 	return Input.is_action_pressed("player_" + direction)
+
+
+func _on_Area2D_area_shape_entered(body_id, body, body_shape, local_shape):
+	if body.is_in_group("cat_food"):
+		if PlayerStats.health < PlayerStats.max_health:
+			PlayerStats.health += 1
+		velocity += SPEED_STEP
+
+	if body.is_in_group("human_food"):
+		if velocity > 32:
+			velocity -= SPEED_STEP
+		else:
+			die()
+
+	if body.is_in_group("trash"):
+		if PlayerStats.health <= 1:
+			die()
+		PlayerStats.health -= 1

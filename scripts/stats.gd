@@ -27,8 +27,10 @@ func set_max_health(value):
 func set_health(value):
 	health = value
 	emit_signal("health_chaged", health)
-	if health <= 0:
-		emit_signal("no_health")
+
+
+func reset_health():
+	self.health = max_health
 
 
 func set_score(points: int) -> void:

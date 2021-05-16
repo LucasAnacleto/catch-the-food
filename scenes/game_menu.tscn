@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/items/ration_2.png" type="Texture" id=6]
 [ext_resource path="res://assets/items/hamburguer.png" type="Texture" id=7]
 
-[node name="GameMenu" type="Panel"]
+[node name="GameMenu" type="PanelContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
@@ -17,168 +17,164 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 8
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 250.0
+margin_bottom = 140.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 250.0
-margin_bottom = 144.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 240.0
+margin_bottom = 132.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 242.0
-margin_bottom = 76.0
+[node name="Items" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 236.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Items" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 151.0
-margin_bottom = 76.0
+[node name="HumanFood" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Items"]
+margin_right = 236.0
+margin_bottom = 8.0
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Items"]
-margin_right = 151.0
-margin_bottom = 16.0
-text = "TITLE_ITEMS"
-
-[node name="HumanFood" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Items"]
-margin_top = 20.0
-margin_right = 151.0
-margin_bottom = 36.0
-
-[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/HumanFood"]
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/Items/HumanFood"]
 margin_right = 8.0
-margin_bottom = 16.0
+margin_bottom = 8.0
 texture = ExtResource( 7 )
 stretch_mode = 4
 
-[node name="Icon2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/HumanFood"]
+[node name="Icon2" type="TextureRect" parent="MarginContainer/VBoxContainer/Items/HumanFood"]
 margin_left = 12.0
 margin_right = 20.0
-margin_bottom = 16.0
+margin_bottom = 8.0
 texture = ExtResource( 4 )
 stretch_mode = 4
 
-[node name="Icon3" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/HumanFood"]
+[node name="Icon3" type="TextureRect" parent="MarginContainer/VBoxContainer/Items/HumanFood"]
 margin_left = 24.0
 margin_right = 32.0
-margin_bottom = 16.0
+margin_bottom = 8.0
 texture = ExtResource( 5 )
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/HumanFood"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Items/HumanFood"]
 margin_left = 36.0
-margin_right = 151.0
-margin_bottom = 16.0
+margin_right = 143.0
+margin_bottom = 8.0
 text = "HUMAN_FOOD_DESCRIPTION"
 
-[node name="Trash" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Items"]
-margin_top = 40.0
-margin_right = 151.0
-margin_bottom = 56.0
+[node name="Trash" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Items"]
+margin_top = 12.0
+margin_right = 236.0
+margin_bottom = 20.0
 
-[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/Trash"]
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/Items/Trash"]
 margin_right = 8.0
-margin_bottom = 16.0
+margin_bottom = 8.0
 texture = ExtResource( 3 )
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/Trash"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Items/Trash"]
 margin_left = 12.0
-margin_right = 99.0
-margin_bottom = 16.0
+margin_right = 91.0
+margin_bottom = 8.0
 text = "TRASH_DESCRIPTION"
 
-[node name="CatFood" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Items"]
-margin_top = 60.0
-margin_right = 151.0
-margin_bottom = 76.0
+[node name="CatFood" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Items"]
+margin_top = 24.0
+margin_right = 236.0
+margin_bottom = 32.0
 
-[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/CatFood"]
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/Items/CatFood"]
 margin_right = 8.0
-margin_bottom = 16.0
+margin_bottom = 8.0
 texture = ExtResource( 2 )
 stretch_mode = 4
 
-[node name="Icon2" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/CatFood"]
+[node name="Icon2" type="TextureRect" parent="MarginContainer/VBoxContainer/Items/CatFood"]
 margin_left = 12.0
 margin_right = 20.0
-margin_bottom = 16.0
+margin_bottom = 8.0
 texture = ExtResource( 6 )
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Items/CatFood"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Items/CatFood"]
 margin_left = 24.0
-margin_right = 126.0
-margin_bottom = 16.0
+margin_right = 118.0
+margin_bottom = 8.0
 text = "CAT_FOOD_DESCRIPTION"
 
-[node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 155.0
-margin_right = 242.0
-margin_bottom = 76.0
-
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
-margin_right = 87.0
-margin_bottom = 16.0
-text = "TITLE_CONTROLS"
-
-[node name="Pause" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
-margin_top = 20.0
-margin_right = 87.0
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 236.0
 margin_bottom = 36.0
+custom_constants/separation = 0
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 236.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Label" parent="MarginContainer/VBoxContainer/Controls"]
+margin_right = 236.0
+margin_bottom = 8.0
 text = "PAUSE_INSTRUCTION"
 
-[node name="Jump" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
-margin_top = 40.0
-margin_right = 87.0
-margin_bottom = 56.0
+[node name="Jump" type="Label" parent="MarginContainer/VBoxContainer/Controls"]
+margin_top = 12.0
+margin_right = 236.0
+margin_bottom = 20.0
 text = "JUMP_INSTRUCTION"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 80.0
-margin_right = 242.0
-margin_bottom = 116.0
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+margin_top = 64.0
+margin_right = 236.0
+margin_bottom = 64.0
+custom_constants/separation = 0
 
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_top = 10.0
-margin_right = 67.0
-margin_bottom = 26.0
-text = "TITLE_CREDITS"
+[node name="Credits" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 236.0
+margin_bottom = 112.0
 
-[node name="Credits" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 71.0
-margin_right = 109.0
-margin_bottom = 36.0
-
-[node name="Art" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/Credits"]
-margin_right = 38.0
-margin_bottom = 16.0
+[node name="Art" type="Label" parent="MarginContainer/VBoxContainer/Credits"]
+margin_right = 236.0
+margin_bottom = 8.0
 text = "ART_BY"
 
-[node name="Dev" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/Credits"]
-margin_top = 20.0
-margin_right = 38.0
-margin_bottom = 36.0
+[node name="Dev" type="Label" parent="MarginContainer/VBoxContainer/Credits"]
+margin_top = 12.0
+margin_right = 236.0
+margin_bottom = 20.0
 text = "DEV_BY"
 
-[node name="Credits2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 113.0
-margin_right = 161.0
-margin_bottom = 36.0
-
-[node name="Font" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/Credits2"]
-margin_right = 48.0
-margin_bottom = 16.0
+[node name="Font" type="Label" parent="MarginContainer/VBoxContainer/Credits"]
+margin_top = 24.0
+margin_right = 236.0
+margin_bottom = 32.0
 text = "FONT_BY"
 
-[node name="Music" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/Credits2"]
-margin_top = 20.0
-margin_right = 48.0
-margin_bottom = 36.0
+[node name="Music" type="Label" parent="MarginContainer/VBoxContainer/Credits"]
+margin_top = 36.0
+margin_right = 236.0
+margin_bottom = 44.0
 text = "MUSIC_BY"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 116.0
+margin_right = 236.0
+margin_bottom = 124.0
+text = "PRESS_TO_START"
+align = 1

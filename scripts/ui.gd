@@ -3,7 +3,7 @@ extends CanvasLayer
 
 const SCORE_TEXT = "%sm"
 
-onready var menu := $GameMenu as Panel
+onready var menu := $GameMenu as PanelContainer
 onready var score := $Score as Label
 
 

@@ -1,11 +1,11 @@
-keys,pt,en
-HUMAN_FOOD_DESCRIPTION,reduz velocidade,decrease speed
-TRASH_DESCRIPTION,perde uma vida,looses one life
-CAT_FOOD_DESCRIPTION,recupera uma vida e autmenta a velocidade,recover one life and increase speed
-ART_BY,arte: deadbrain.games & Thor,art: deadbrain.games & Thor
-DEV_BY,desenvolvimento: deadbrain.games,development: deadbrain.games
-MUSIC_BY,musica: por ...,music: ...
-FONT_BY,fonte: Silverfinster Font por heaven castro,font: Silverfinster Font by heaven castro
-PAUSE_INSTRUCTION,[esc] pausar / voltar / iniciar jogo,[esc] pause / resume / start game
-JUMP_INSTRUCTION,[space] pular,[space] jump
-PRESS_TO_START,pressione [esc] para iniciar, press [esc] to start
+keys,pt,en,es
+HUMAN_FOOD_DESCRIPTION,reduz velocidade,decrease speed,reducir la velocidad
+TRASH_DESCRIPTION,perde uma vida,looses one life,perde una vida
+CAT_FOOD_DESCRIPTION,recupera uma vida e aumenta a velocidade,recover one life and increase speed,recobra una vida y aumenta la velocidad
+ART_BY,arte: deadbrain.games & Thor,art: deadbrain.games & Thor,arte: deadbrain.games & Thor
+DEV_BY,desenvolvimento: deadbrain.games,development: deadbrain.games,desarollo: deadbrain.games
+MUSIC_BY,musica: por ...,music: ...,musica: ...
+FONT_BY,fonte: Silverfinster Font por heaven castro,font: Silverfinster Font by heaven castro,fuente tipografica: Silverfinster Font por heaven castro
+PAUSE_INSTRUCTION,[esc] pausar / voltar / iniciar jogo,[esc] pause / resume / start game,[esc] pausar / volver / empezar el videojuego
+JUMP_INSTRUCTION,[spaco] pular,[space] jump,[barra espaciadora] saltar
+PRESS_TO_START,pressione [esc] para iniciar, press [esc] to start,pulsa [esc] para empezar

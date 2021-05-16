@@ -119,7 +119,7 @@ player_down={
 
 [locale]
 
-translations=PoolStringArray( "res://assets/intl/strings.en.translation", "res://assets/intl/strings.pt.translation" )
+translations=PoolStringArray( "res://assets/intl/strings.en.translation", "res://assets/intl/strings.pt.translation", "res://assets/intl/strings.es.translation" )
 
 [physics]
 

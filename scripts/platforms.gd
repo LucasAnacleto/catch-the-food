@@ -9,11 +9,13 @@ export var start_row := 0
 onready var themes = [
 	{
 		"wall": "brick",
-		"gap": "grid"
+		"gap": "grid",
+		"bg": Color(0.230469, 0.171951, 0.171951)
 	},
 	{
 		"wall": "sand",
-		"gap": "water"
+		"gap": "water",
+		"bg": Color(0.433594, 0.694672, 1)
 	}
 ]
 onready var current_theme = _get_next_theme()
@@ -53,3 +55,7 @@ func _get_next_theme() -> int:
 func _on_PlatformGenerator_map_clear_requested():
 	current_theme = _get_next_theme()
 	clear()
+
+
+func _on_PlatformGenerator_map_generation_requested(_width):
+	VisualServer.set_default_clear_color(themes[current_theme].bg)

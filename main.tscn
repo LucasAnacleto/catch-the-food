@@ -66,5 +66,6 @@ __meta__ = {
 }
 
 [connection signal="map_clear_requested" from="PlatformGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_clear_requested"]
+[connection signal="map_generation_requested" from="PlatformGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_generation_requested"]
 [connection signal="draw_platform_requested" from="PlatformGenerator/PlatformSectionGenerator" to="PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformSectionGenerator_draw_platform_requested"]
 [connection signal="platform_generated" from="PlatformGenerator/PlatformSectionGenerator/Platforms" to="PlatformGenerator/PlatformSectionGenerator/Items" method="_on_Platforms_platform_generated"]

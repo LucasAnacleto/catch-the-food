@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/foodtiles.png-6e620a4d0f218f376b04c49f58f40dba.stex"
+path="res://.import/ice_cream.png-e776e2f2afee1d182800877dc418ad6d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/food/foodtiles.png"
-dest_files=[ "res://.import/foodtiles.png-6e620a4d0f218f376b04c49f58f40dba.stex" ]
+source_file="res://assets/items/ice_cream.png"
+dest_files=[ "res://.import/ice_cream.png-e776e2f2afee1d182800877dc418ad6d.stex" ]
 
 [params]
 

@@ -33,13 +33,11 @@ func _process(delta):
 
 func _start_map_transition() -> void:
 #	bgm.volume_db -= 0.2
-	player.input_enabled = false
 	player.can_jump = false
 	player_camera.clear_current()
 
 
 func _end_map_transition() -> void:
-	player.input_enabled = true
 	player.can_jump = true
 	player_camera.make_current()
 

@@ -33,6 +33,7 @@ start_row = 17
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -36, 136 )
+can_jump = false
 automove_to = 1
 velocity = 50
 

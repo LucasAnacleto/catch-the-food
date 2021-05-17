@@ -14,8 +14,11 @@ onready var camera := $Camera as Camera2D
 # positions
 onready var player_start_position := player.position
 
+var next_player : KinematicBody2D
+
 
 func _ready():
+	_change_player()
 	map_generator.generate_map(map_width)
 
 func _process(delta):
@@ -63,5 +66,27 @@ func _end_game() -> void:
 	yield(get_tree().create_timer(1.5), "timeout")
 	PlayerStats.reset_score()
 	PlayerStats.reset_health()
-# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
+
+
+func _change_player():
+	var player_parent = player.get_parent()
+
+	next_player.can_jump = player.can_jump
+	next_player.can_move = player.can_move
+	next_player.automove_to = player.automove_to
+	next_player.max_jump_height = player.max_jump_height
+	next_player.velocity = player.velocity
+	next_player.gravity = player.gravity
+	next_player.position = player.position
+
+	player.remove_child(player_camera)
+	next_player.add_child(player_camera)
+	player_parent.remove_child(player)
+	player_parent.add_child(next_player)
+
+	player = next_player
+
+
+func _on_Platforms_theme_changed(theme):
+	next_player = theme.cat.instance()

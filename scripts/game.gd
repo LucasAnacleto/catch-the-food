@@ -18,6 +18,7 @@ var next_player : KinematicBody2D
 
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_change_player()
 	map_generator.generate_map(map_width)
 

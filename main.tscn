@@ -86,3 +86,4 @@ visible = false
 [connection signal="map_generation_requested" from="Game/PlatformGenerator" to="Game/PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformGenerator_map_generation_requested"]
 [connection signal="draw_platform_requested" from="Game/PlatformGenerator/PlatformSectionGenerator" to="Game/PlatformGenerator/PlatformSectionGenerator/Platforms" method="_on_PlatformSectionGenerator_draw_platform_requested"]
 [connection signal="platform_generated" from="Game/PlatformGenerator/PlatformSectionGenerator/Platforms" to="Game/PlatformGenerator/PlatformSectionGenerator/Items" method="_on_Platforms_platform_generated"]
+[connection signal="theme_changed" from="Game/PlatformGenerator/PlatformSectionGenerator/Platforms" to="Game" method="_on_Platforms_theme_changed"]

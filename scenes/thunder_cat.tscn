@@ -1,11 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/cats/black/cat-walk.png" type="Texture" id=2]
+[ext_resource path="res://assets/cats/thunder/thunder_cat_die.png" type="Texture" id=1]
+[ext_resource path="res://assets/cats/thunder/thunder_cat_walk.png" type="Texture" id=2]
 [ext_resource path="res://scripts/player.gd" type="Script" id=3]
-[ext_resource path="res://assets/cats/black/cat-dead.png" type="Texture" id=4]
-[ext_resource path="res://assets/audio/Drop.wav" type="AudioStream" id=5]
-[ext_resource path="res://assets/audio/Swing 2.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/audio/Electrocuted 1.wav" type="AudioStream" id=7]
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
@@ -15,18 +12,18 @@ region = Rect2( 0, 0, 8, 8 )
 atlas = ExtResource( 2 )
 region = Rect2( 8, 0, 8, 8 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 4 )
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 8, 8 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 10 ) ],
 "loop": true,
 "name": "dead",
 "speed": 5.0
@@ -35,13 +32,13 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 3.51222, 3.96842 )
 
-[node name="BlackCat" type="KinematicBody2D"]
+[node name="ThunderCat" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 10 )
+frames = SubResource( 11 )
 animation = "dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -55,15 +52,3 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.464533, 0 )
 shape = SubResource( 7 )
-
-[node name="Audio" type="Node" parent="."]
-
-[node name="Jump" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 6 )
-
-[node name="eating" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 7 )
-volume_db = 5.0
-
-[node name="dead" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource( 5 )

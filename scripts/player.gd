@@ -20,6 +20,9 @@ var is_dead := false
 
 onready var sprite := $AnimatedSprite as AnimatedSprite
 onready var area := $Area2D as Area2D
+onready var death_sound := $Audio/dead as AudioStreamPlayer
+onready var jump_sound := $Audio/Jump as AudioStreamPlayer
+onready var eating_sound := $Audio/eating as AudioStreamPlayer
 
 
 func _ready():
@@ -47,6 +50,7 @@ func _physics_process(_delta):
 			sprite.play('idle')
 
 	if should_jump():
+		jump_sound.play()
 		if is_on_floor():
 			motion.y = -max_jump_height
 
@@ -81,6 +85,7 @@ func should_jump() -> bool:
 
 func die() -> void:
 	PlayerStats.health = 0
+	death_sound.play()
 	is_dead = true
 
 
@@ -89,6 +94,7 @@ func _is_action_pressed(direction: String) -> bool:
 
 
 func _on_Area2D_area_shape_entered(body_id, body, body_shape, local_shape):
+	eating_sound.play()
 	if body.is_in_group("cat_food"):
 		if PlayerStats.health < PlayerStats.max_health:
 			PlayerStats.health += 1

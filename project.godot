@@ -53,7 +53,7 @@ window/size/height=144
 window/size/test_width=854
 window/size/test_height=480
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 

@@ -11,6 +11,7 @@ onready var map_generator := $PlatformGenerator as PlatformMapGenerator
 onready var player := $Player as KinematicBody2D
 onready var player_camera := $Player/Camera as Camera2D
 onready var camera := $Camera as Camera2D
+onready var bgm := $Audio/Music
 # positions
 onready var player_start_position := player.position
 
@@ -42,7 +43,7 @@ func _process(delta):
 
 
 func _start_map_transition() -> void:
-#	bgm.volume_db -= 0.2
+	bgm.volume_db -= 0.2
 	player.can_jump = false
 	player_camera.clear_current()
 
@@ -54,8 +55,8 @@ func _end_map_transition() -> void:
 
 func _reset_map() -> void:
 	PlayerStats.level_up()
-#	bgm.volume_db = 0
-#	bgm.play()
+	bgm.volume_db = 0
+	bgm.play()
 	map_generator.clear_map()
 	map_generator.generate_map(map_width)
 	camera.make_current()
@@ -63,7 +64,7 @@ func _reset_map() -> void:
 
 
 func _end_game() -> void:
-#	bgm.stop()
+	bgm.stop()
 	yield(get_tree().create_timer(1.5), "timeout")
 	PlayerStats.reset_score()
 	PlayerStats.reset_health()

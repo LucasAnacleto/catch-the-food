@@ -7,5 +7,5 @@ DEV_BY,desenvolvimento: deadbrain.games,development: deadbrain.games,desarollo: 
 MUSIC_BY,musica: por ...,music: ...,musica: ...
 FONT_BY,fonte: Silverfinster Font por heaven castro,font: Silverfinster Font by heaven castro,fuente tipografica: Silverfinster Font por heaven castro
 PAUSE_INSTRUCTION,[esc] pausar / voltar / iniciar jogo,[esc] pause / resume / start game,[esc] pausar / volver / empezar el videojuego
-JUMP_INSTRUCTION,[spaco] pular,[space] jump,[barra espaciadora] saltar
+JUMP_INSTRUCTION,[espaco] pular,[space] jump,[barra espaciadora] saltar
 PRESS_TO_START,pressione [esc] para iniciar, press [esc] to start,pulsa [esc] para empezar

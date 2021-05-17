@@ -1,3 +1,4 @@
+Originally made for [mini jam 80](https://itch.io/jam/mini-jam-80-cats)
 Yet another 2D infinite runner side scrolling platform where you play as hungry cat. Can you keep a balanced diet?
 
 Made with [godot engine](https://godotengine.org/) v3.3.0

@@ -1,3 +1,3 @@
 [submodule "modules/procedural_platform_generator"]
 	path = modules/procedural_platform_generator
-	url = git@code.deadbrain.games:procedural_platform_generator.git
+	url = git@git.sr.ht:~deadbrain-games/procedural_platform_generator
